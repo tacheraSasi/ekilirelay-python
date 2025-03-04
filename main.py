@@ -1,4 +1,9 @@
 import requests
+from dotenv import load_dotenv
+load_dotenv()
+import os
+
+API_KEY = os.getenv("API_KEY")
 
   def send_email(api_key, to, subject, message, headers=''):
       url = "https://relay.ekilie.com/api/index.php"
@@ -17,7 +22,7 @@ import requests
   
   # Usage
   response = send_email(
-      "API_KEY",
+      API_KEY,
       "python@example.com",
       "Python Test",
       "Hello from Python!",
